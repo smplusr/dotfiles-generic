@@ -1,0 +1,5 @@
+setup-xorg-base
+sed '30i	Option "XkbLayout" "fr"'
+apk add vim make git gcc libc-dev font-noto firefox xdotool xrandr alsa-lib alsa-utils alsaconf gstreamer gst-plugins-good
+echo "DISPLAY=:0 firefox" > ~/.xinitrc
+echo "DISPLAY=:0 xdotool search --name 'Mozilla Firefox' windowsize $(DISPLAY=:0 xrandr | grep '*' | awk '{print $1}' | sed -r 's/[x]/ /')" >> ~/.xinitrc
