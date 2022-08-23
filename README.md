@@ -19,7 +19,7 @@ Examples:
 - resize 1920 1080 'Mozilla Firefox'
 - resize $(scale) 'Mozilla Firefox'
 
-# fullscreen - ~/.resize $(~/.scale)
+# fullscreen
 The fullscreen alias sets an application in fullscreen.
 It is effectively equivalent to 'resize $(scale)'.
 Example:
