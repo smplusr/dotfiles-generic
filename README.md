@@ -2,6 +2,7 @@
 A minimal Xorg based configuration for alpine linux systems.
 
 # Usage
+The setup has to be started using 'source setup' otherwise, aliases won't work.
 Running the 'startx' command will launch Mozilla Firefox at full screen.
 Most aliases (scale and resize) are executable files located under the user's home directory.
 
