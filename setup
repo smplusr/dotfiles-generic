@@ -1,5 +1,12 @@
 setup-xorg-base
 sed '30i	Option "XkbLayout" "fr"'
 apk add vim make git gcc libc-dev font-noto firefox xdotool xrandr alsa-lib alsa-utils alsaconf gstreamer gst-plugins-good
-echo "DISPLAY=:0 firefox && ~./.resize" > ~/.xinitrc
-echo "DISPLAY=:0 xdotool search --name 'Mozilla Firefox' windowsize \$(DISPLAY=:0 xrandr | grep '*' | awk '{print \$1}' | sed -r 's/[x]/ /')" >> ~/.resize && chmod +x ~/.resize
+
+
+echo "~/.resize \$(~/.scale) 'Mozilla Firefox' & DISPLAY=:0 firefox" > ~/.xinitrc
+echo "DISPLAY=:0 xdotool search --name \"\$3\" windowsize \$1 \$2" > ~/.resize && chmod +x ~/.resize
+echo "DISPLAY=:0 xrandr | grep '*' | awk '{print \$1}' | sed -r 's/[x]/ /'" > ~/.scale && chmod +x ~/.scale
+
+alias resize=~/.resize
+alias scale=~/.scale
+alias fullscreen="~/.resize \$(~/.scale)"
