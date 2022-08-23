@@ -6,7 +6,10 @@ apk add vim make git gcc libc-dev font-noto firefox xdotool xrandr alsa-lib alsa
 echo "~/.resize \$(~/.scale) 'Mozilla Firefox' & DISPLAY=:0 firefox" > ~/.xinitrc
 echo "DISPLAY=:0 xdotool search --name \"\$3\" windowsize \$1 \$2" > ~/.resize && chmod +x ~/.resize
 echo "DISPLAY=:0 xrandr | grep '*' | awk '{print \$1}' | sed -r 's/[x]/ /'" > ~/.scale && chmod +x ~/.scale
+echo "echo \"DISPLAY=:0 \$1\" >> .xinitrc" > ~/.addstart && chmod +x ~/.addstart
+
 
 alias resize=~/.resize
 alias scale=~/.scale
 alias fullscreen="~/.resize \$(~/.scale)"
+alias addstart=~/.addstart
