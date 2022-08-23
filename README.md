@@ -24,3 +24,7 @@ The fullscreen alias sets an application in fullscreen.
 It is effectively equivalent to 'resize $(scale)'.
 Example:
 - fullscreen 'Mozilla Firefox'
+
+# addstart - ~/.addstart
+Adds an application to '.xinitrc'.
+The added application will launch with the X session.
