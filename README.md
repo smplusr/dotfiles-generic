@@ -1,5 +1,5 @@
 # [dotfiles-generic]
-A simpler configuration for alpine linux systems.
+A minimal Xorg based configuration for alpine linux systems.
 
 # Usage
 Running the 'startx' command will launch Mozilla Firefox at full screen.
