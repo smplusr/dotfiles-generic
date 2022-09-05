@@ -7,7 +7,9 @@ setup-xorg-base
 printf "30i\n\tOption \"XkbLayout\" \"fr\"\n.\nw\nq" | ed /usr/share/X11/xorg.conf.d/40-libinput.conf
 apk add vim make git gcc libc-dev font-noto adwaita-icon-theme firefox xdotool xrandr alsa-lib alsa-utils alsaconf gstreamer gst-plugins-good
 
-echo "~/.resize \$(~/.scale) 'Mozilla Firefox' & DISPLAY=:0 firefox" > ~/.xinitrc
 echo "DISPLAY=:0 xdotool search --name \"\$3\" windowsize \$1 \$2" > ~/.resize && chmod +x ~/.resize
 echo "DISPLAY=:0 xrandr | grep '*' | awk '{print \$1}' | sed -r 's/[x]/ /'" > ~/.scale && chmod +x ~/.scale
-echo "echo \"DISPLAY=:0 \$1\" >> .xinitrc" > ~/.addstart && chmod +x ~/.addstarts
+echo "echo \"DISPLAY=:0 \$1\" >> .xinitrc" > ~/.addstart && chmod +x ~/.addstart
+echo "~/.resize \$(~/.scale) \$1" > ~/.fullscreen && chmod +x ~/.fullscreen
+
+~/.addstart firefox
