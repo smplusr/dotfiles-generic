@@ -1,0 +1,4 @@
+alias resize=~/.resize
+alias scale=~/.scale
+alias fullscreen="~/.resize \$(~/.scale)"
+alias addstart=~/.addstart
